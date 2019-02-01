@@ -23,9 +23,22 @@ class InputTest extends TestCase {
 		$this->assertTrue($_GET == null);
 	}
 
-	public function testICanRetriveGetValue () {}	
+	public function testICanRetriveGetValue () {
+		$value = 'testICanRetriveGetValue';
+		$_GET['test'] = $value;
+		
+		$input = new Input();
+		$this->assertEquals($input->get('test'), $value);
+	}	
 	
-	public function testICanRetrivePostValue () {}	
+	public function testICanRetrivePostValue () {
+		$value = 'testICanRetrivePostValue';
+		$_GET['test'] = $value;
+		
+		$input = new Input();
+		$this->assertEquals($input->post('test'), $value);
+	
+	}	
 
 	public function testICanRetiveUnSanitisedGetValue () {}
 
