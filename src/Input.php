@@ -10,13 +10,18 @@ class Input {
 	}
 
 	private function clean () {
-		foreach ($_POST as $key => $value) {
-			$this->post[$key] = $value;
+		
+		if (is_array($_POST) {
+			foreach ($_POST as $key => $value) {
+				$this->post[$key] = $value;
+			}
 		}
 		unset($_POST);
-
-		foreach ($_GET as $key => $value) {
-			$this->get[$key] = $value;
+		    
+		if (is_array($_POST) {
+			foreach ($_GET as $key => $value) {
+				$this->get[$key] = $value;
+			}
 		}
 		unset($_GET);
 	}
