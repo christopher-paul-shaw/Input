@@ -16,14 +16,14 @@ class Input {
 				$this->post[$key] = $value;
 			}
 		}
-		unset($_POST);
+		$_POST = false;
 		    
-		if (is_array($_POST)) {
+		if (is_array($_GET)) {
 			foreach ($_GET as $key => $value) {
 				$this->get[$key] = $value;
 			}
 		}
-		unset($_GET);
+		$_GET = false;
 	}
 
 	public function get ($key, $default=false, $sanitize=true) {
@@ -35,7 +35,7 @@ class Input {
 	}
 
 	public function post ($key, $default=false, $sanitize=true) {
-		$value =  isset($this->get[$key]) ? $this->get[$key] : $default;
+		$value =  isset($this->post[$key]) ? $this->post[$key] : $default;
 		if ($sanitize) {
 			$value = strip_tags($value);
 		}
