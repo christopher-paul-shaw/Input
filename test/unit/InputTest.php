@@ -4,6 +4,11 @@ use CPS\Input;
 use PHPUnit\Framework\TestCase;
 
 class InputTest extends TestCase {
+	
+	public function setUp () {
+		unset($_POST);
+		unset($_GET);
+	}
 
 	public function testICanUnsetGobal() { 
 		$_POST['testing'] = 'post';
