@@ -33,7 +33,7 @@ class InputTest extends TestCase {
 	
 	public function testICanRetrivePostValue () {
 		$value = 'testICanRetrivePostValue';
-		$_GET['test'] = $value;
+		$_POST['test'] = $value;
 		
 		$input = new Input();
 		$this->assertEquals($input->post('test'), $value);
