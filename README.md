@@ -8,12 +8,13 @@ This class blanks out the Super Globals $_POST and $_GET and stores their conten
     echo $input->get('id');
     echo $input->post('id');
 
-# Features
-- Default Paramaters can be passed as the second opion
+# Default Parameters
+Default Paramaters can be passed as the second option
     
     $input->get('test','default value here');
     
-- Strips Tags by default, can be disabled by passing false as third option.
+# Sanitization 
+Strips Tags by default, can be disabled by passing false as third option.
     
     $input->get('test','false',false);
 
